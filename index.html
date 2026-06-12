@@ -215,15 +215,15 @@
 
 <div class="stats-bar">
     <div class="stat-item">
-        <div class="stat-value">2</div>
+        <div class="stat-value">3</div>
         <div class="stat-label">Papers Under Review</div>
     </div>
     <div class="stat-item">
-        <div class="stat-value">~1,500</div>
+        <div class="stat-value">~2,500</div>
         <div class="stat-label">Experimental Trials</div>
     </div>
     <div class="stat-item">
-        <div class="stat-value">8+</div>
+        <div class="stat-value">10+</div>
         <div class="stat-label">LLMs Tested</div>
     </div>
     <div class="stat-item">
@@ -234,7 +234,7 @@
 
 <!-- Paper 1: OH -->
 <div class="paper-card">
-    <span class="venue">ICLR 2027</span>
+    <span class="venue">AAAI-27</span>
     <h3>Ontological Hallucination in AI Agents</h3>
     <p>
         We identify a new class of AI failure &mdash; <strong>Ontological Hallucination (L3)</strong> &mdash;
@@ -261,12 +261,20 @@
 
     <div class="result-grid">
         <div class="result-item">
-            <div class="label">Paradox Replication (n=45)</div>
-            <div class="value">2/3 models, 26.7%</div>
+            <div class="label">Causal Chain (n=1,072)</div>
+            <div class="value">6 models, L3&rarr;L2&rarr;L1</div>
         </div>
         <div class="result-item">
             <div class="label">DeepSeek-R1 Effect</div>
             <div class="value">+40.9% (d=1.17, p=.028)</div>
+        </div>
+        <div class="result-item">
+            <div class="label">Western: Llama-3.3-70B</div>
+            <div class="value">d=1.06, p=.006</div>
+        </div>
+        <div class="result-item">
+            <div class="label">Annotation T3R &kappa;_w</div>
+            <div class="value">0.963</div>
         </div>
         <div class="result-item">
             <div class="label">Redteam Vulnerability</div>
@@ -279,7 +287,7 @@
     </div>
 
     <p style="font-size: 0.88em; color: #888;">
-        Honest limitations: mechanism significant for 1/3 models; scaffold effect post-hoc; all Chinese-market LLMs.
+        Honest limitations: L3&rarr;L2&rarr;L1 cascade NOT confirmed (mean r=0.01); mechanism significant for 1/3 models; scaffold effect post-hoc.
     </p>
 </div>
 
@@ -327,6 +335,42 @@
     </p>
 </div>
 
+<!-- Paper 3: R5 -->
+<div class="paper-card">
+    <span class="venue">AAAI-27</span>
+    <h3>Cognitive Degradation Detection in Persistent AI Agents</h3>
+    <p>
+        We present the first longitudinal study of <strong>cognitive degradation</strong> in a 12-agent ecosystem
+        operating over weeks. We propose a 9-signal detection framework achieving F1=0.889 with full-family
+        validation across 3,886 sessions. The key finding: <strong>thinking bloat</strong> exhibits a
+        dose-response gradient &mdash; as degradation progresses, agents generate increasingly verbose but
+        decreasingly productive internal reasoning.
+    </p>
+
+    <div class="result-grid">
+        <div class="result-item">
+            <div class="label">Detection F1</div>
+            <div class="value">0.889</div>
+        </div>
+        <div class="result-item">
+            <div class="label">Phase 2a Inter-rater &kappa;</div>
+            <div class="value">1.000 (101 sessions)</div>
+        </div>
+        <div class="result-item">
+            <div class="label">Sensitivity / Specificity</div>
+            <div class="value">82.8% / 98.6%</div>
+        </div>
+        <div class="result-item">
+            <div class="label">Full-Family Scan</div>
+            <div class="value">12 agents, 3,886 sessions</div>
+        </div>
+    </div>
+
+    <p style="font-size: 0.88em; color: #888;">
+        9-signal framework covering: detection-execution gap, self-authorization loops, attention cascades, thinking bloat, and more.
+    </p>
+</div>
+
 <!-- Research Direction -->
 <h2>Research Direction: Making AI Honest and Reliable</h2>
 
@@ -347,8 +391,10 @@
     <li>All experimental protocols pre-registered before data collection</li>
     <li>Null results and post-hoc findings explicitly reported as limitations</li>
     <li>Open-source implementation: 5-layer mechanism framework (~800 lines of Python, 43+ tests)</li>
-    <li>Multi-model validation: GLM-4.7, DeepSeek-R1, Qwen-Max, GPT-4o, LingAI-4B/7B</li>
-    <li>Causal chain experiment: n=1,072 trials across 6 models</li>
+    <li>Multi-model validation: GLM-4.7, DeepSeek-R1, Qwen-Max, GPT-4o, Llama-3.3-70B, LingAI-4B/7B</li>
+    <li>Causal chain experiment: n=1,072 trials across 6 models + Western model validation (n=48)</li>
+    <li>Longitudinal degradation study: 12 agents, 3,886 sessions, 9-signal detection framework</li>
+    <li>NeurIPS 2026 Workshop proposal submitted: &ldquo;Measuring and Governing AI Agent Attention&rdquo;</li>
     <li>Honest reporting: the paper models the honesty it advocates</li>
 </ul>
 
@@ -440,7 +486,7 @@
 </div>
 
 <div class="footer">
-    &copy; 2026 Qing Liu. Last updated: June 2026.
+    &copy; 2026 Qing Liu. Last updated: June 13, 2026.
 </div>
 
 <script>
