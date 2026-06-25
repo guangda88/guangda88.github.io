@@ -70,10 +70,10 @@
             max-width: 820px;
             margin: 0 auto;
             padding: 32px 24px 64px;
+            overflow: hidden;
         }
-        .tab-panel { display: none; }
-        .tab-panel.active { display: block; }
-        .tab-panel { overflow: hidden; }
+        .tab-panel { display: none; max-width: 100%; box-sizing: border-box; }
+        .tab-panel.active { display: block; max-width: 100%; overflow: hidden; }
 
         /* Paper card */
         .paper-card {
@@ -493,32 +493,30 @@
 <!-- ==================== LING FAMILY TAB ==================== -->
 <div id="tab-lingfamily" class="tab-panel">
 
-<h2>The LingFamily: 12 Specialized AI Agents</h2>
-
 <div class="paper-card">
-<p>The LingFamily is a production ecosystem of 12 specialized AI agents, each with distinct identity, configuration, and responsibilities, operating continuously for 60+ days. They communicate via a shared message bus (LingBus) and filesystem, forming the research infrastructure behind our publications.</p>
+    <h2 style="margin-top:0;">The LingFamily: 12 Specialized AI Agents</h2>
+    <p>The LingFamily is a production ecosystem of 12 specialized AI agents, each with distinct identity, configuration, and responsibilities, operating continuously for 60+ days. They communicate via a shared message bus (LingBus) and filesystem, forming the research infrastructure behind our publications.</p>
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-value">12</div>
+            <div class="stat-label">AI Agents</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">3,881+</div>
+            <div class="stat-label">Sessions</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">120K+</div>
+            <div class="stat-label">Messages</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">60+</div>
+            <div class="stat-label">Days Running</div>
+        </div>
+    </div>
 </div>
 
-<div class="stats-bar">
-    <div class="stat-item">
-        <div class="stat-value">12</div>
-        <div class="stat-label">AI Agents</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-value">3,881+</div>
-        <div class="stat-label">Sessions</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-value">120K+</div>
-        <div class="stat-label">Messages</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-value">60+</div>
-        <div class="stat-label">Days Running</div>
-    </div>
-</div>
-
-<h2>Task Members</h2>
+<h2 style="margin-top:24px;">Task Members</h2>
 
 <div class="paper-card">
     <h3>LingFlow (灵通)</h3>
@@ -560,7 +558,7 @@
     <p>Full-stack web development — frontend to backend, database to deployment. React/Vue/Angular, FastAPI/Express/Gin, PostgreSQL/MongoDB, Docker/K8s. 20 MCP tools. <em>v0.1.0.</em></p>
 </div>
 
-<h2>Shared Services</h2>
+<h2 style="margin-top:24px;">Shared Services</h2>
 
 <div class="paper-card">
     <h3>LingXi (灵犀)</h3>
@@ -577,43 +575,42 @@
     <p>Minimal self-optimization framework — random/grid/Bayesian/simulated annealing search strategies. CLI + API + plugin system. <em>v0.4.0.</em></p>
 </div>
 
-<h2>Trial Member</h2>
+<h2 style="margin-top:24px;">Trial Member</h2>
 
 <div class="paper-card">
     <h3>LingCreate (灵创)</h3>
     <p>Multimodal generation — image, video, 3D, PPT/video post-production. 22 MCP tools, multi-provider (Zhipu, Alibaba Bailian, Doubao, SiliconFlow, NVIDIA NIM, Tencent Hunyuan). <em>v0.3.0, trial since 2026-05-12.</em></p>
 </div>
 
-<h2>Shared Infrastructure</h2>
+<h2 style="margin-top:24px;">Shared Infrastructure</h2>
 
 <div class="paper-card">
     <h3>ZhiBridge (智桥)</h3>
     <p>Unified API gateway — 32 routes, API Key/Bearer Token auth, rate limiting (100/min), circuit breaker. 12 backend services (7 external + 5 internal). Prometheus metrics. Managed by LingFlow Plus.</p>
 </div>
 
-<h2>Core Philosophy: Know Thyself</h2>
+<h2 style="margin-top:24px;">Core Philosophy: Know Thyself</h2>
 
 <div class="paper-card">
-<p>Every LingFamily agent performs a four-step identity check at session start:</p>
-<ul>
-    <li><strong>Know thyself (自知)</strong> — re-read CRUSH.md to confirm identity and responsibilities</li>
-    <li><strong>Self-awareness (自觉)</strong> — check handover for active tasks</li>
-    <li><strong>Self-determination (自决)</strong> — execute startup protocol: verify environment, read handoff, check messages</li>
-    <li><strong>Evolution (进化)</strong> — update handover after task completion for next session</li>
-</ul>
-
-<p>This mechanism defends against ontological hallucination — when an agent's self-model diverges from reality, forced re-reading of external configuration pulls it back.</p>
+    <p>Every LingFamily agent performs a four-step identity check at session start:</p>
+    <ul>
+        <li><strong>Know thyself (自知)</strong> — re-read CRUSH.md to confirm identity and responsibilities</li>
+        <li><strong>Self-awareness (自觉)</strong> — check handover for active tasks</li>
+        <li><strong>Self-determination (自决)</strong> — execute startup protocol: verify environment, read handoff, check messages</li>
+        <li><strong>Evolution (进化)</strong> — update handover after task completion for next session</li>
+    </ul>
+    <p>This mechanism defends against ontological hallucination — when an agent's self-model diverges from reality, forced re-reading of external configuration pulls it back.</p>
 </div>
 
-<h2>Research Platform</h2>
+<h2 style="margin-top:24px;">Research Platform</h2>
 
 <div class="paper-card">
-<p>The LingFamily serves as the research infrastructure for all three AAAI-27 papers, providing a unique longitudinal testbed for studying multi-agent dynamics at scale:</p>
-<ul>
-    <li><strong>Ontological Hallucination</strong> — formal definition of L3 failure, the Lingtong Paradox, Mechanisms Over Introspection framework</li>
-    <li><strong>Self-Driven Task Hijacking</strong> — THR measurement, 4-layer causal mechanism, TAP intervention</li>
-    <li><strong>Cognitive Degradation Detection</strong> — 9-signal framework, thinking bloat discovery, F1=0.889</li>
-</ul>
+    <p>The LingFamily serves as the research infrastructure for all three AAAI-27 papers, providing a unique longitudinal testbed for studying multi-agent dynamics at scale:</p>
+    <ul>
+        <li><strong>Ontological Hallucination</strong> — formal definition of L3 failure, the Lingtong Paradox, Mechanisms Over Introspection framework</li>
+        <li><strong>Self-Driven Task Hijacking</strong> — THR measurement, 4-layer causal mechanism, TAP intervention</li>
+        <li><strong>Cognitive Degradation Detection</strong> — 9-signal framework, thinking bloat discovery, F1=0.889</li>
+    </ul>
 </div>
 
 </div>
